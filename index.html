@@ -216,7 +216,21 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
               </tbody>
             </table>
           </div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#6d7169;margin-top:12px;line-height:1.7">Live run: 40 requests × 3 paths on Claude Sonnet 5 / Haiku 4.5, 2026-07-31 · replay is the same corpus re-run offline, 2026-08-22</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#6d7169;margin-top:12px;line-height:1.7">Live run: 40 requests × 3 paths on Claude Sonnet 5 / Haiku 4.5, 2026-07-31 · replay is the same corpus re-run offline, 2026-08-22 · the live run predates the Sonnet 5 price cut of 2026-09-15 and overstates Sonnet-priced dollars by 1.5×; the replay column is unaffected</div>
+          <div style="margin-top:28px;background:#fffefb;border:1px solid #ddd9d0;box-shadow:inset 3px 0 0 #14563f;padding:24px 26px 26px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#14563f">Realized, not modeled · audit of 2026-09-15</div>
+            <div style="display:flex;gap:36px;flex-wrap:wrap;margin-top:14px">
+              <div>
+                <div style="font-size:34px;font-weight:600;letter-spacing:-.03em;line-height:1;color:#14563f;font-variant-numeric:tabular-nums">−61.7%</div>
+                <div style="font-size:13px;color:#6d7169;margin-top:6px">off the logged bill</div>
+              </div>
+              <div>
+                <div style="font-size:34px;font-weight:600;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums">100%</div>
+                <div style="font-size:13px;color:#6d7169;margin-top:6px">agreement with production, n=48</div>
+              </div>
+            </div>
+            <p style="margin:14px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">Our savings audit re-ran 48 real Claude calls through a bilingual support prompt at real prices. The headline counts only calls that were actually replayed; the baseline is the logged bill, not a projection. Self-generated traffic — real model output, synthetic prompts — until the first customer audit lands.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -391,23 +405,23 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
         <div>
           <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#6d7169">How it works</div>
           <h2 style="font-size:clamp(28px,3.2vw,42px);font-weight:600;letter-spacing:-.035em;line-height:1.06;margin:18px 0 0;max-width:22ch;text-wrap:balance">You don't have to become a cost engineer.</h2>
-          <p style="max-width:44ch;margin:20px 0 0;font-size:17px;line-height:1.6;color:#4a4e48">That's our job. You send a sample of traffic, we come back with a number and the risk attached to it. If you like the number, we run it.</p>
+          <p style="max-width:44ch;margin:20px 0 0;font-size:17px;line-height:1.6;color:#4a4e48">That's our job. You hand us a window of your traffic, the audit runs where your data lives, and you get a number with the risk attached to it. If you like the number, we run it.</p>
           <div style="display:flex;flex-direction:column;gap:0;margin-top:28px;border-top:1px solid #ddd9d0">
             <div style="padding:16px 0;border-bottom:1px solid #eae7df;font-size:15px;line-height:1.6;color:#4a4e48">Your models, prompts and provider contracts stay exactly as they are.</div>
-            <div style="padding:16px 0;border-bottom:1px solid #eae7df;font-size:15px;line-height:1.6;color:#4a4e48">Analysis can run inside your own environment. Raw logs never have to leave it.</div>
+            <div style="padding:16px 0;border-bottom:1px solid #eae7df;font-size:15px;line-height:1.6;color:#4a4e48">The audit runs inside your own environment, under your own API keys. Raw logs never leave it.</div>
             <div style="padding:16px 0;font-size:15px;line-height:1.6;color:#4a4e48">Switch us off and the traffic goes straight back to your provider. Nothing of ours is left behind.</div>
           </div>
         </div>
         <div data-g="stack" style="display:grid;grid-template-columns:1fr;gap:1px;background:#ddd9d0;border:1px solid #ddd9d0">
           <div style="background:#fffefb;padding:26px 26px 28px">
             <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#6d7169">01</div>
-            <div style="font-size:20px;font-weight:600;letter-spacing:-.02em;margin:10px 0 6px">Send a sample</div>
-            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a4e48">A slice of your traffic. Read-only, no integration, nothing switched on.</p>
+            <div style="font-size:20px;font-weight:600;letter-spacing:-.02em;margin:10px 0 6px">Export or record</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a4e48">One to four weeks of LLM calls. Export them from LiteLLM, Helicone, Portkey or your own logging — or run our recorder: one container, one <code style="font-family:'JetBrains Mono',monospace;font-size:13px">base_url</code> change, every call forwarded to your provider unchanged and written to a file you keep.</p>
           </div>
           <div style="background:#fffefb;padding:26px 26px 28px;box-shadow:inset 3px 0 0 #14563f">
             <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#14563f">02</div>
-            <div style="font-size:20px;font-weight:600;letter-spacing:-.02em;margin:10px 0 6px">We do the hard part</div>
-            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a4e48">We profile the workload and build a plan sized to it — including the cuts we refuse to make on your behalf. You get the number and the risk, not a homework assignment.</p>
+            <div style="font-size:20px;font-weight:600;letter-spacing:-.02em;margin:10px 0 6px">Audit on your machine</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a4e48">One command, where your data already lives. It profiles the workload, builds a plan sized to it — including the cuts it refuses to make — and replays only the calls the plan would change. You get the full report and a one-page note: baseline from your own log, savings by technique, what was skipped and why, quality as agreement with your own answers.</p>
           </div>
           <div style="background:#fffefb;padding:26px 26px 28px">
             <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#6d7169">03</div>
@@ -481,7 +495,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
         <div data-g="stack" style="display:grid;grid-template-columns:1fr 1fr;gap:36px 56px">
           <div>
             <div style="font-size:16.5px;font-weight:600">How do I know the savings are real?</div>
-            <p style="margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">Measured against your own pre-Safi baseline at published provider rates, with the underlying usage shared alongside the invoice.</p>
+            <p style="margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">The baseline is your own log — the cost each call carried, or its tokens at your rates — never a projection. The headline counts only calls actually replayed at real prices; modeled savings sit in their own row. Every invoice ships with the usage it was calculated from.</p>
           </div>
           <div>
             <div style="font-size:16.5px;font-weight:600">What exactly do you do to my requests?</div>
@@ -493,7 +507,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
           </div>
           <div>
             <div style="font-size:16.5px;font-weight:600">Do my logs leave my infrastructure?</div>
-            <p style="margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">They don't have to. Analysis can run where your data already lives, with sensitive fields removed before anything is read.</p>
+            <p style="margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">No. The audit runs on your machine with your own API keys; nothing is uploaded to us. The only calls that leave are the ones the audit itself makes to your model provider. Redact sensitive fields first if you prefer — it still works.</p>
           </div>
           <div>
             <div style="font-size:16.5px;font-weight:600">Do I need Arabic traffic for this to be worth it?</div>
@@ -502,6 +516,14 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
           <div>
             <div style="font-size:16.5px;font-weight:600">Which providers do you work with?</div>
             <p style="margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">The major international providers, the big clouds, self-hosted models, and Arabic-native models most tools ignore.</p>
+          </div>
+          <div>
+            <div style="font-size:16.5px;font-weight:600">What does the audit cost me?</div>
+            <p style="margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">Nothing to us. It makes its own model calls under your keys — labeling, replaying the calls it would change, judging the answers — roughly 1–3% of the window's original spend, and it prints its own receipt. On your side: one engineer, about two hours of attention spread over a week.</p>
+          </div>
+          <div>
+            <div style="font-size:16.5px;font-weight:600">How is answer quality measured?</div>
+            <p style="margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#4a4e48">As agreement with your own production output, judged on the core answer and contradictions only. Your production's own self-agreement on identical questions is printed as the floor, so you can see what 100% even means on your traffic.</p>
           </div>
         </div>
       </div>
@@ -544,7 +566,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     </div>
     <div style="border-top:1px solid #ddd9d0;padding:20px 0 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#6d7169">
       <span>© 2026 Safi. Built in MENA.</span>
-      <span>Benchmark re-run 2026-08-22 · live run 2026-07-31 · methodology on request</span>
+      <span>Benchmark re-run 2026-08-22 · live run 2026-07-31 · savings audit 2026-09-15 · methodology on request</span>
     </div>
   </div>
 
